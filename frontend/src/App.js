@@ -1,17 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserList from "./components/UserList";
 import AddUser from "./components/AddUser";
 import EditUser from "./components/EditUser";
+import DetailUser from "./components/DetailUser";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<UserList />} />
         <Route path="/add" element={<AddUser />} />
+        <Route path="/view/:id" element={<DetailUser />} />
         <Route path="/edit/:id" element={<EditUser />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

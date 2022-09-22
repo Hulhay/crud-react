@@ -18,7 +18,7 @@ const UserList = () => {
     const deleteUser = async (id) => {
         try {
             await axios.delete(`http://localhost:5000/users/${id}`)
-            getUsers();
+            setUsers(users.filter((user) => user.id !== id));
         } catch (error) {
             console.log(error)
         }
@@ -46,6 +46,7 @@ const UserList = () => {
                                 <td>{user.email}</td>
                                 <td>{user.gender}</td>
                                 <td>
+                                    <Link to={`view/${user.id}`} className="button is-small is-success">View</Link>
                                     <Link to={`edit/${user.id}`} className="button is-small is-info">Edit</Link>
                                     <button onClick={() => deleteUser(user.id)} className="button is-small is-danger">Delete</button>
                                 </td>
