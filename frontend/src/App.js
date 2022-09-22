@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import UserList from "./components/UserList";
-import AddUser from "./components/AddUser";
-import EditUser from "./components/EditUser";
-import DetailUser from "./components/DetailUser";
+import UserList from "./pages/UserList";
+import AddUser from "./pages/AddUser";
+import EditUser from "./pages/EditUser";
+import DetailUser from "./pages/DetailUser";
 
 function App() {
   return (

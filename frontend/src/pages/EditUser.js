@@ -33,40 +33,44 @@ const EditUser = () => {
     }
 
     return (
-        <div className="columns mt-5 is-centered">
-            <div className="column is-half">
+        <div className="m-5">
+            <h1 className="mb-5 font-bold text-3xl">
+                Edit User
+            </h1>
+            <div className="w-auto">
                 <form onSubmit={updateUser}>
-                    <div className="field">
-                        <label className="label">Name</label>
-                        <div className="control">
+                    <div className="mt-5">
+                        <label>Name</label>
+                        <div>
                             <input
                                 type="text"
-                                className="input"
+                                className="text-field"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="Name"
                             />
                         </div>
                     </div>
-                    <div className="field">
-                        <label className="label">Email</label>
-                        <div className="control">
+                    <div className="mt-5">
+                        <label>Email</label>
+                        <div>
                             <input
                                 type="text"
-                                className="input"
+                                className="text-field"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email"
                             />
                         </div>
                     </div>
-                    <div className="field">
-                        <label className="label">Gender</label>
-                        <div className="control">
-                            <div className="select is-fullwidth">
+                    <div className="mt-5">
+                        <label>Gender</label>
+                        <div>
+                            <div>
                                 <select
                                     value={gender}
                                     onChange={(e) => setGender(e.target.value)}
+                                    className="text-field"
                                 >
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -74,8 +78,8 @@ const EditUser = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="field">
-                        <button type="submit" className="button is-success">Update</button>
+                    <div className="w-full flex justify-end mt-6">
+                        <button type="submit" className="button-green w-1/6">Update</button>
                     </div>
                 </form>
             </div>

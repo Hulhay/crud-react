@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { useParams, Link } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 const DetailUser = () => {
 
@@ -8,6 +8,7 @@ const DetailUser = () => {
     const [email, setEmail] = useState("")
     const [gender, setGender] = useState("Male")
     const { id } = useParams()
+    const navigate = useNavigate();
 
     useEffect(() => {
         getUserByID();
@@ -22,21 +23,21 @@ const DetailUser = () => {
     }
 
     return (
-        <div className="columns mt-5 is-centered">
+        <div className="m-5">
             <div className="column is-half">
-                <Link to={`/`} className="button is-info">Back</Link>
+                <button onClick={() => navigate(`/`)} className="button-blue w-1/12">Back</button>
                 <form>
-                    <div className="field">
-                        <label className="label">Name</label>
-                        <p>{name}</p>
+                    <div className="mt-5">
+                        <label>Name</label>
+                        <div>{name}</div>
                     </div>
-                    <div className="field">
-                        <label className="label">Email</label>
-                        <p>{email}</p>
+                    <div className="mt-5">
+                        <label>Email</label>
+                        <div>{email}</div>
                     </div>
-                    <div className="field">
-                        <label className="label">Gender</label>
-                        <p>{gender}</p>
+                    <div className="mt-5">
+                        <label>Gender</label>
+                        <div>{gender}</div>
                     </div>
                 </form>
             </div>
